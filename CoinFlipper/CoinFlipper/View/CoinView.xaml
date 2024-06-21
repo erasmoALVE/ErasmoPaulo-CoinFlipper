@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinFlipper.View.CoinView"
+             Title="CoinView">
+    <VerticalStackLayout>
+        <Image
+            Source="{Binding FotoMoeda}"
+            HeightRequest="100"/>
+        <Label
+            Text="{Binding ResultadoMoeda}"/>
+        <Picker
+            Title="Selecione um lado da moeda"
+            SelectedItem="{Binding SelecioneUmaMoeda}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>cara</x:String>
+                    <x:String>coroa</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button
+            Text="Girar a moeda"
+            Command="{Binding JogarCommandMoeda}"
+            />
+    </VerticalStackLayout>
+</ContentPage>
